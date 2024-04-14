@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog App</title>
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <title>
+        <%=locals.title %>
+    </title>
+    <meta name="description" content="<%=locals.description %>">
+    <link rel="stylesheet" href="/path/to/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" defer src="/js/script.js"></script>
 
-	<!-- # Google Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Neuton:wght@700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicons -->
+    <link href="/img/favicon.png" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-	<!-- # CSS Plugins -->
-	<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 
-	<!-- # Main Style Sheet -->
-	<link rel="stylesheet" href="css/style.css">
+    <!-- Vendor CSS Files -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/vendor/aos/aos.css" rel="stylesheet">
 
-
+    <!-- Template Main CSS Files -->
+    <link href="/css/variables.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        
+        <%- include('../partials/header.ejs') %>
+            <div class="main"><%- body %></div>
+        <%- include('../partials/footer.ejs') %>
+    <!-- Vendor JS Files -->
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/vendor/aos/aos.js"></script>
+    <script src="/vendor/php-email-form/validate.js"></script>
 
-        <%- include('../partials/header.ejs')  %>
-
-        <main class="main">
-            <%- body %>
-        </main>
-        <%- include('../partials/footer.ejs')  %>
-
-    </div>
-
-    <!-- # JS Plugins -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <script src="plugins/bootstrap/bootstrap.min.js"></script>
-
-    <!-- Main Script -->
-    <script src="js/script.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/js/main.js"></script>
 </body>
+
 </html>
