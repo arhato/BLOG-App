@@ -153,3 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+document.getElementById('searchInput').addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+      event.preventDefault(); // Prevent default form submission
+      document.querySelector('.search-form').submit(); // Programmatically submit the form
+  }
+});

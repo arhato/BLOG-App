@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const connectDB = require('./server/db/connect');
+
 // const session = require('express-session');
 
 
@@ -21,6 +22,9 @@ const PORT = 2000 || process.env.PORT;
 
 // Connect to the database
 connectDB()
+
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 //     .then(() => {
 //         
 //     })
