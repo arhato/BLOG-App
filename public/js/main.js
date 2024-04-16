@@ -73,6 +73,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   });
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+
+  dropdownToggle.addEventListener('click', function () {
+    const dropdownMenu = this.nextElementSibling;
+    dropdownMenu.classList.toggle('show');
+  });
+
+  // Close the dropdown menu when clicking outside of it
+  document.addEventListener('click', function (event) {
+    const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+    dropdownMenus.forEach(function (menu) {
+      if (!menu.contains(event.target) && !dropdownToggle.contains(event.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  });
+
 
   /**
    * Scroll top button

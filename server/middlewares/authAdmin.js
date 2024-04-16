@@ -1,18 +1,18 @@
 // Middleware for user authentication
 const jwt = require('jsonwebtoken');
 
-const authenticateUser = (req, res, next) => {
+const authenticateAdmin= (req, res, next) => {
     // Check for token in headers, cookies, or request body
-    const token = req.headers.authorization || req.cookies.token || req.body.token;
+    const token = req.headers.authorization || req.cookies.tokenAdmin || req.body.token;
 
-      // Respond if no token found
-      if (!token) {
+    // Respond if no token found
+    if (!token) {
         return res.status(401).json({ message: 'Unauthorized' });
     }
     
     // Decode the token 
     try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(token, process.env.ADMIN_SECRET);
         // Attach user object to request object for future
         req.userId = decoded.userId;
         // Pass object to the caller
@@ -24,6 +24,4 @@ const authenticateUser = (req, res, next) => {
 };
 
 // Export module
-module.exports = { authenticateUser };
-
-
+module.exports = { authenticateAdmin };

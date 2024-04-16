@@ -10,8 +10,8 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/latest-posts">Latest Posts</a></li>
+          <li><a href="/adminHome">Home</a></li>
+          <li><a href="/recent-posts">Recent Posts</a></li>
           <li class="dropdown"><a><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="/category/business">Business</a></li>
@@ -46,17 +46,15 @@
           </form>
         </div>
         <!-- End Search Form -->
+        
         <div class="dropdown">
           <a href="#" class="dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="bi bi-box-arrow-in-right"></i>
           </a>
           <div class="dropdown-menu" aria-labelledby="userDropdown">
-            <% if (locals.user) { %>
-              <a class="dropdown-item" href="/logout">Logout</a>
-              <a class="dropdown-item" href="/add-post">Add Post</a>
-            <% } else { %>
-              <a class="dropdown-item" href="/login">Login</a>
-            <% } %>
+            <a class="dropdown-item" href="/admin">Login</a>
+            <a class="dropdown-item" href="/admin/logout">Logout</a>
+            <a class="dropdown-item" href="/add-post">Add Post</a>
           </div>
         </div>
 
