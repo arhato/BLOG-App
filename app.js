@@ -8,7 +8,7 @@ const MongoStore=require('connect-mongo');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-const PORT = 2000 || process.env.PORT;
+const PORT = process.env.PORT||2000;
 
 // Connect to the database
 connectDB()
@@ -57,6 +57,6 @@ app.use('/', require('./server/routes/admin'));// // app.use('/', mainRouter);
 //     res.status(500).send('Something went wrong!');
 // });
 
-app.listen(PORT, () => {
+app.listen(PORT,'0.0.0.0', () => {
     console.log(`App listening at http://localhost:${PORT}/`);
 });
