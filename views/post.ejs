@@ -74,6 +74,8 @@
                 <h5 class="comment-title">Leave a Comment</h5>
                 <% if (loggedIn) { %> <!-- Check if user is logged in -->
                 <div class="row">
+                  <form action="/post-comment" class="form" method="POST">
+
                   <div class="col-lg-6 mb-3">
                     <label for="comment-name">Name</label>
                     <input type="text" class="form-control" id="comment-name" placeholder="Enter your name">
@@ -91,10 +93,12 @@
                     <input type="submit" class="btn btn-primary" value="Post comment">
                   </div>
                 </div>
+              </form>
                 <% } else { %> <!-- If user is not logged in, provide login/signup links -->
                   <p>Please <a href="/login" style="color: blue; text-decoration: underline;">login</a> or <a href="/signup" style="color: blue; text-decoration: underline;">signup</a> to leave a comment.</p>                <% } %>
               </div>
-            </div><!-- End Comments Form -->
+            </div>
+            <!-- End Comments Form -->
 
 
           </div>

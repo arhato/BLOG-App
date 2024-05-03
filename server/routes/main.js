@@ -45,7 +45,7 @@ router.get('/post/:id', async (req, res) => {
             title: data.title,
             description: "Blog App with node.js, express and mongo"
         }
-        res.render('post', { locals, posts, data, comments, loggedIn: false });
+        res.render('post', { locals, posts, data, comments, loggedIn: true });
 
     } catch (error) {
         console.log(error)
@@ -389,29 +389,7 @@ router.get('/logout', (req, res) => {
     });
 });
 
-
-const authors = [
-    "coding_guru",
-    "wanderlust_adventurer",
-    "culinary_artist",
-    "tech_whiz",
-    "travel_bug",
-    "foodie_explorer",
-    "code_ninja",
-    "globetrotter",
-    "masterchef",
-    "dev_genius",
-    "adventure_seeker",
-    "recipe_lover",
-    "programmer_extraordinaire",
-    "explorer_at_heart",
-    "chef_in_training",
-    "coding_enthusiast",
-    "world_wanderer",
-    "gourmet_guru",
-    "software_savant",
-    "nomad_programmer"
-  ];
+;
 
 //   
 
@@ -419,7 +397,7 @@ const authors = [
 module.exports = router;
 
 
-const ObjectId = mongoose.Types.ObjectId; // Import ObjectId from mongoose
+// const ObjectId = mongoose.Types.ObjectId; // Import ObjectId from mongoose
 
 //   // Function to select a random author username
 //   function getRandomAuthor() {
